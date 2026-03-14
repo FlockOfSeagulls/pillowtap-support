@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillow Tap - Breathe Your Way to Better Sleep</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0c1220;
+            color: #e0e0e0;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 80px;
+            background: linear-gradient(180deg, #0f1a2e 0%, #0c1220 100%);
+        }
+        .hero-icon { font-size: 80px; margin-bottom: 24px; }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .hero h1 span { color: #5ac8c8; }
+        .hero .tagline {
+            font-size: 20px;
+            color: #8a9ab5;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #5ac8c8;
+            color: #0c1220;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .cta-button:hover { opacity: 0.85; }
+        .cta-sub {
+            margin-top: 12px;
+            font-size: 14px;
+            color: #5a6a80;
+        }
+
+        /* How it works */
+        .section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 48px;
+        }
+        .steps {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 220px;
+            text-align: center;
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: rgba(90, 200, 200, 0.15);
+            border: 2px solid rgba(90, 200, 200, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #5ac8c8;
+        }
+        .step h3 {
+            font-size: 18px;
+            color: #c0c8d8;
+            margin-bottom: 8px;
+        }
+        .step p {
+            font-size: 14px;
+            color: #7a8a9f;
+            line-height: 1.6;
+        }
+
+        /* Features */
+        .features {
+            background: rgba(90, 200, 200, 0.03);
+            border-top: 1px solid rgba(90, 200, 200, 0.08);
+            border-bottom: 1px solid rgba(90, 200, 200, 0.08);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 32px;
+        }
+        .feature {
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .feature-emoji {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .feature h3 {
+            font-size: 17px;
+            color: #c0c8d8;
+            margin-bottom: 8px;
+        }
+        .feature p {
+            font-size: 14px;
+            color: #7a8a9f;
+            line-height: 1.6;
+        }
+
+        /* Patterns */
+        .pattern-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        .pattern-card {
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 14px;
+            border: 1px solid rgba(90, 200, 200, 0.1);
+        }
+        .pattern-card h3 {
+            font-size: 18px;
+            color: #5ac8c8;
+            margin-bottom: 4px;
+        }
+        .pattern-card .timing {
+            font-size: 13px;
+            color: #5a6a80;
+            margin-bottom: 8px;
+        }
+        .pattern-card p {
+            font-size: 14px;
+            color: #8a9ab5;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .footer-links {
+            margin-bottom: 16px;
+        }
+        .footer-links a {
+            color: #5ac8c8;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+        }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer .copy {
+            font-size: 13px;
+            color: #3a4a60;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 36px; }
+            .hero .tagline { font-size: 17px; }
+            .section-title { font-size: 26px; }
+            .steps { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-icon">&#127769;</div>
+        <h1>Pillow <span>Tap</span></h1>
+        <p class="tagline">Your phone gently guides your breathing with haptic taps as you drift off to sleep. No screens. No sounds. Just rhythm.</p>
+        <a href="https://apps.apple.com" class="cta-button">Download on the App Store</a>
+        <p class="cta-sub">Free &middot; No ads &middot; No data collected</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Choose a Pattern</h3>
+                <p>Pick from three scientifically-backed breathing techniques designed to calm your mind.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Start &amp; Slide Under</h3>
+                <p>Tap start and place your phone under your pillow. The screen dims automatically.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Follow the Taps</h3>
+                <p>One tap means breathe in. Two taps mean breathe out. Let your body sync to the rhythm.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section features">
+        <h2 class="section-title">Designed for Sleep</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <div class="feature-emoji">&#128244;</div>
+                <h3>No Sound Required</h3>
+                <p>Works entirely through vibration. No audio to disturb your partner or wake you up.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-emoji">&#127761;</div>
+                <h3>Zero Light</h3>
+                <p>Screen dims to minimum brightness with a pure black display. Invisible under your pillow.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-emoji">&#128267;</div>
+                <h3>Battery Friendly</h3>
+                <p>A 15-minute session uses roughly 1-3% battery. OLED screens draw almost no power on black.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-emoji">&#128274;</div>
+                <h3>Completely Private</h3>
+                <p>No accounts, no analytics, no internet connection. Everything stays on your device.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Three Breathing Patterns</h2>
+        <div class="pattern-cards">
+            <div class="pattern-card">
+                <h3>4-7-8 Relaxing</h3>
+                <div class="timing">Inhale 4s &middot; Hold 7s &middot; Exhale 8s</div>
+                <p>Developed by Dr. Andrew Weil specifically for sleep. The extended exhale activates your parasympathetic nervous system, telling your brain it's safe to rest.</p>
+            </div>
+            <div class="pattern-card">
+                <h3>Box Breathing</h3>
+                <div class="timing">Inhale 4s &middot; Hold 4s &middot; Exhale 4s &middot; Rest 4s</div>
+                <p>Used by Navy SEALs to stay calm under pressure. Equal phases create a steady rhythm that quiets racing thoughts.</p>
+            </div>
+            <div class="pattern-card">
+                <h3>Simple Relaxation</h3>
+                <div class="timing">Inhale 4s &middot; Exhale 6s</div>
+                <p>No hold phase, just a natural in-and-out flow. Perfect if you're new to breathing exercises or prefer simplicity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero" style="padding: 80px 20px;">
+        <h2 class="section-title">Sleep better tonight.</h2>
+        <a href="https://apps.apple.com" class="cta-button">Download Pillow Tap</a>
+        <p class="cta-sub">Available on iPhone</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html">Support</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:cliffordsiegel@gmail.com">Contact</a>
+        </div>
+        <p class="copy">&copy; 2026 Pillow Tap. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
